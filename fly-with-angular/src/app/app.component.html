@@ -7,23 +7,25 @@
     <h1 class="title">Fly with Angular</h1>
     <!-- <button class="btn add-trip-btn">+ Add a Trip</button> -->
   </div>
-
+  <div *ngIf="trips.length == 0">
+    <h4 class="text-primary">No trips to display</h4>
+  </div>
   <div class="trips-list">
-    <div class="trip">
+    <div class="trip" *ngFor="let trip of trips">
       <div class="row">
         <div class="col-lg-2 col-md-3 col-sm-4 trip-image-container">
-          <img src="" class="trip-image">
+          <img [src]="trip.image" class="trip-image">
         </div>
         <div class="col-lg-10 col-md-9 col-sm-8 trip-info">
           <div>
-            <div class="trip-name">{{title}}</div>
-            <div class="trip-price">{{price}}</div>
+            <div class="trip-name">{{trip.name}}</div>
+            <div class="trip-price">{{trip.price}}</div>
           </div>
-          <div class="trip-duration">{{duration}}</div>
+          <div class="trip-duration">{{trip.duration}}</div>
 
           <div class="row trip-description-container">
             <div class="col-md-8 trip-description">
-            {{description}}
+              {{trip.description}}
             </div>
             <div class="col-md-4">
               <button class="btn btn-lg book-btn">Book Trip</button>
