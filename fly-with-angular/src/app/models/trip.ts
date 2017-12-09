@@ -3,5 +3,6 @@ export interface Trip {
     price: number,
     duration: string,
     description: string,
-    image: string
+    image: string,
+    booked: boolean,
 }
